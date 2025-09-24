@@ -1,0 +1,4 @@
+violation_id,new_description
+aria-command-name,My custom description for aria command
+aria-required-attr,My custom description for required attributes
+link-name,test

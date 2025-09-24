@@ -1,0 +1,5 @@
+{
+  "PORT": 8080,
+  "mongo_connection_string": "mongodb://localhost:27017",
+  "mongo_database": "molyreporter"
+}
