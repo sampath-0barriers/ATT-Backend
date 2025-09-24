@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web Accessibility Scanner</title>
+  </head>
+  <body>
+    <h1>Web Accessibility Scanner</h1>
+
+    <form id="scan-form">
+      <label for="url">Enter the URL to scan:</label>
+      <input
+        type="text"
+        id="url"
+        name="url"
+        placeholder="https://example.com"
+        required
+      />
+      <button type="submit">Scan</button>
+    </form>
+    <div id="result-container1">
+      <!-- Display scan results here -->
+    </div>
+    <form id="get-content">
+      <div>
+        <h1>
+          Push the button below to get the data from the scan (Please wait 10
+          seconds after pushing scan to proceed)
+        </h1>
+        <button type="submit">Get scan data</button>
+      </div>
+    </form>
+    <div id="result-container2">
+      <!-- Display scan results here -->
+    </div>
+    <form id="get-accessibility">
+      <div>
+        <h1>
+          Push the button below to get the accessibility score from the scan
+        </h1>
+        <button type="submit">Get accessibility score</button>
+      </div>
+    </form>
+    <div id="result-container3">
+      <!-- Display scan results here -->
+    </div>
+
+    <script>
+      let response;
+      document
+        .getElementById("scan-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const url = document.getElementById("url").value;
+
+          try {
+            response = await axios.post("http://35.85.57.180:3000/scan", {
+              scan_url: url,
+            });
+
+            if (response.status === 200) {
+              const result = response.data;
+              // Display scan results in the result container
+              document.getElementById("result-container1").innerHTML =
+                JSON.stringify(result, null, 2);
+            } else {
+              alert("Error: Unable to retrieve scan results.");
+            }
+          } catch (error) {
+            alert("An error occurred: " + error.message);
+          }
+        });
+
+      document
+        .getElementById("get-content")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const url = document.getElementById("url").value;
+          const response_data = response.data.request_id;
+          try {
+            console.log(response.data.request_id);
+            const response2 = await axios({
+              method: "GET",
+              url:
+                "http://35.85.57.180:3000/scan?scanRequestId=" + response_data,
+            });
+
+            if (response2.status === 200) {
+              // Display scan results in the result container
+              document.getElementById("result-container2").innerHTML =
+                JSON.stringify(response2.data, null, 2);
+            } else {
+              alert("Error: Unable to retrieve scan results.");
+            }
+          } catch (error) {
+            alert("An error occurred: " + error.message);
+          }
+        });
+
+      document
+        .getElementById("get-accessibility")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const response_data = response.data.request_id;
+          try {
+            console.log(response.data.request_id);
+            const response2 = await axios({
+              method: "GET",
+              url:
+                "http://35.85.57.180:3000/score?scanRequestId=" + response_data,
+            });
+
+            if (response2.status === 200) {
+              // Display scan results in the result container
+              document.getElementById("result-container3").innerHTML =
+                JSON.stringify(response2.data, null, 2);
+            } else {
+              alert("Error: Unable to retrieve scan results.");
+            }
+          } catch (error) {
+            alert("An error occurred: " + error.message);
+          }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
