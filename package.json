@@ -1,0 +1,57 @@
+{
+  "name": "molyreporter-backend",
+  "version": "1.0.0",
+  "description": "0Barriers Accessibility Compliance Scan Tool Backend",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon -x node --inspect src/app.js --ext js",
+    "test": "node src/app.js",
+    "prettier:fix": "npx prettier . --write",
+    "prettier:check": "npx prettier .",
+    "eslint:fix": "npx eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0barriersFoundation/molyreporter-backend.git"
+  },
+  "author": "0Barriers Foundation",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0barriersFoundation/molyreporter-backend/issues"
+  },
+  "homepage": "https://github.com/0barriersFoundation/molyreporter-backend#readme",
+  "dependencies": {
+    "@adobe/pdfservices-node-sdk": "^4.1.0",
+    "@axe-core/puppeteer": "^4.10.1",
+    "axios": "^1.5.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "chart.js": "^3.5.1",
+    "chartjs-node-canvas": "^4.1.6",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.2",
+    "fe": "^2.0.27",
+    "handlebars": "^4.7.8",
+    "he": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "6.1",
+    "mongoose": "^7.6.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.14.0",
+    "puppeteer": "^23.9.0",
+    "resend": "^4.0.1",
+    "stripe": "^17.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.0.3"
+  }
+}

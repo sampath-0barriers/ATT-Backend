@@ -1,0 +1,196 @@
+Testing id selector & input text:
+{
+"scan_url" : "https://amazon.ca",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {
+            "url": "https://amazon.ca",
+            "depth": 0,
+            "type": "input",
+            "findBy": "id",
+            "elementInput": "uoft",
+            "findValue": "twotabsearchtextbox",
+            "stepAction": "inputText",
+            "waitTime": 30,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+Testing inputText with xpath, selectValue with name, and click with className
+{
+"scan_url" : "https://pantherdb.org",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {
+            "url": "https://pantherdb.org",
+            "depth": 0,
+            "type": "select",
+            "findBy": "xpath",
+            "elementInput": "CAPAN",
+            "findValue": "//*[@id='header']/table[1]/tbody/tr[4]/td/form/table/tbody/tr/td[1]/input",
+            "stepAction": "inputText",
+            "waitTime": 30,
+            "isActive": true,
+            "note": ""
+        },
+        {
+            "url": "https://pantherdb.org",
+            "depth": 0,
+            "type": "select",
+            "findBy": "name",
+            "elementInput": "1",
+            "findValue": "listType",
+            "stepAction": "selectValue",
+            "waitTime": 30,
+            "isActive": true,
+            "note": ""
+        },
+        {
+            "url": "https://pantherdb.org",
+            "depth": 0,
+            "type": "click",
+            "findBy": "className",
+            "elementInput": "",
+            "findValue": "buttonblueexactsize",
+            "stepAction": "click",
+            "waitTime": 30,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+
+Testing select & click with cssSelector
+{
+"scan_url" : "https://ncbi.nlm.nih.gov",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {
+            "url": "https://ncbi.nlm.nih.gov",
+            "depth": 0,
+            "type": "select",
+            "findBy": "cssSelector",
+            "elementInput": "assembly",
+            "findValue": "#database",
+            "stepAction": "selectValue",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        },
+        {
+            "url": "https://ncbi.nlm.nih.gov",
+            "depth": 0,
+            "type": "click",
+            "findBy": "cssSelector",
+            "elementInput": "",
+            "findValue": "#search",
+            "stepAction": "click",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+Testing inputText with xpath
+{
+"scan_url" : "https://www.google.com",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {   
+            "url": "https://www.google.com",
+            "depth": 0,
+            "type": "input",
+            "findBy": "xpath",
+            "elementInput": "testing",
+            "findValue": "//*[@id='APjFqb']",
+            "stepAction": "inputText",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+
+Testing click by className
+{
+"scan_url" : "https://www.pinterest.ca",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {   
+            "url": "https://www.pinterest.ca",
+            "depth": 0,
+            "type": "button",
+            "findBy": "className",
+            "elementInput": "",
+            "findValue": "tBJ",
+            "stepAction": "click",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+Testing radio button
+{
+"scan_url" : "https://pantherdb.org",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {   
+            "url": "https://pantherdb.org",
+            "depth": 0,
+            "type": "button",
+            "findBy": "xpath",
+            "elementInput": "",
+            "findValue": "//*[@id='mainBody']/table/tbody/tr[2]/td/div/form/table[1]/tbody/tr/td[2]/table/tbody/tr/td/table[3]/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/input[1]",
+            "stepAction": "click",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        },
+                {   
+            "url": "https://pantherdb.org",
+            "depth": 0,
+            "type": "button",
+            "findBy": "xpath",
+            "elementInput": "",
+            "findValue": "//*[@id='mainBody']/table/tbody/tr[2]/td/div/form/table[2]/tbody/tr/td/a",
+            "stepAction": "click",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
+
+Testing id selector
+{
+"scan_url" : "https://www.amazon.ca",
+"guidance" : ["wcag2a"],
+"steps" : [
+        {   
+            "url": "https://www.amazon.ca",
+            "depth": "0",
+            "type": "input",
+            "findBy": "id",
+            "elementInput": "gift ideas",
+            "findValue": "twotabsearchtextbox",
+            "stepAction": "inputText",
+            "waitTime": 10,
+            "isActive": true,
+            "note": ""
+        }
+    ],
+"depth" : 0
+}
